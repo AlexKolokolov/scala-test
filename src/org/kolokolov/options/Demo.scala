@@ -2,9 +2,9 @@ package org.kolokolov.options
 
 object Demo extends App {
   
-  println(sum(Some(1), Some(2), Some(3)))
-  println(sum(Some(1), Some(2), None))
-  println(sum(None, None, None))
+  println(sum(Some(1), Some(2), Some(3))) //Some(6)
+  println(sum(Some(1), Some(2), None))    //Some(3)
+  println(sum(None, None, None))          //None
   
   
   def sum(x: Option[Int], y: Option[Int], z: Option[Int]): Option[Int] = {
