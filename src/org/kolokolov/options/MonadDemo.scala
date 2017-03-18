@@ -1,5 +1,6 @@
 package org.kolokolov.options
 
+
 object Demo2 extends App {
 
   println(sum(Some(1), Some(2), Some(3))) //Some(6)
@@ -10,13 +11,12 @@ object Demo2 extends App {
   
   
   def sum(x: Option[Int], y: Option[Int], z: Option[Int]): Option[Int] = {
-    def plus(a: Option[Int], b: Int): Option[Int] = {
-      a match {
-        case None => None
-        case _ => Some(a.get + b)
+    x.flatMap { i => 
+      y.flatMap { j => 
+        z.flatMap { k => 
+          Some(i + j + k) 
+        }
       }
     }
-
-    x.flatMap(plus(y,_)).flatMap(plus(z,_))
   }
 }
