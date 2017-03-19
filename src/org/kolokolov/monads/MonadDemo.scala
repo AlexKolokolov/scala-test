@@ -1,7 +1,7 @@
-package org.kolokolov.options
+package org.kolokolov.monads
 
 
-object Demo2 extends App {
+object MonadDemo extends App {
 
   println(sum(Some(1), Some(2), Some(3))) //Some(6)
   println(sum(Some(1), Some(2), None))    //None
@@ -11,10 +11,10 @@ object Demo2 extends App {
   
   
   def sum(x: Option[Int], y: Option[Int], z: Option[Int]): Option[Int] = {
-    x.flatMap { i => 
-      y.flatMap { j => 
-        z.flatMap { k => 
-          Some(i + j + k) 
+    x.flatMap { _x => 
+      y.flatMap { _y => 
+        z.flatMap { _z => 
+          Some(_x + _y + _z) 
         }
       }
     }
