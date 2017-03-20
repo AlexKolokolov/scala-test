@@ -2,4 +2,6 @@
 .cache-main
 .classpath
 .settings
+.idea
+scala-test.iml
 bin
